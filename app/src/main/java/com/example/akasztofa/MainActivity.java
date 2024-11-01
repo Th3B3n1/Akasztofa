@@ -1,5 +1,6 @@
 package com.example.akasztofa;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.widget.ImageView;
@@ -24,7 +25,8 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     private final List<String> words = new ArrayList<>() {
         {
-            add("tarca");
+            add("tárca");
+            add("pénztárca");
             add("semmi");
             add("asdasdasd");
         }
@@ -35,6 +37,18 @@ public class MainActivity extends AppCompatActivity {
     private String randomWord;
     private int badTips = 0;
     private HashMap<Character, Boolean> tips = new HashMap<>();
+    private final List<Character> specialCharacters = new ArrayList<>(){
+        {
+            add('Á');
+            add('É');
+            add('Ó');
+            add('Ú');
+            add('Ö');
+            add('Ü');
+            add('Ő');
+            add('Ű');
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,11 +72,19 @@ public class MainActivity extends AppCompatActivity {
     }
     private void updateToTipCharForward(int currentChar)
     {
-        if (currentChar >= 65 && currentChar <= 90)
+        if (currentChar >= 65 && currentChar <= 90 || specialCharacters.contains((char) currentChar))
         {
             if (currentChar == 90)
             {
+                currentChar = specialCharacters.get(0);
+            }
+            else if (specialCharacters.indexOf((char) currentChar) == specialCharacters.size() - 1)
+            {
                 currentChar = 65;
+            }
+            else if (specialCharacters.contains((char) currentChar))
+            {
+                currentChar = specialCharacters.get(specialCharacters.indexOf((char) currentChar) + 1);
             }
             else
             {
@@ -78,11 +100,19 @@ public class MainActivity extends AppCompatActivity {
     }
     private void updateToTipCharBackWard(int currentChar)
     {
-        if (currentChar >= 65 && currentChar <= 90)
+        if (currentChar >= 65 && currentChar <= 90 || specialCharacters.contains((char) currentChar))
         {
             if (currentChar == 65)
             {
+                currentChar = specialCharacters.get(specialCharacters.size() - 1);
+            }
+            else if (specialCharacters.indexOf((char) currentChar) == 0)
+            {
                 currentChar = 90;
+            }
+            else if (specialCharacters.contains((char) currentChar))
+            {
+                currentChar = specialCharacters.get(specialCharacters.indexOf((char) currentChar) - 1);
             }
             else
             {
@@ -96,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
         }
         this.charToTip.setText(String.valueOf((char) currentChar));
     }
+    @SuppressLint("DiscouragedApi")
     private void tip(char tippedChar)
     {
         if (!tips.containsKey(tippedChar))
@@ -196,6 +227,7 @@ public class MainActivity extends AppCompatActivity {
         this.hangImage.setImageResource(R.drawable.akasztofa00);
         this.wordsLayout.removeAllViews();
         this.randomWord = this.generateWord();
+        this.badTips = 0;
         this.tips = new HashMap<>();
     }
 }
