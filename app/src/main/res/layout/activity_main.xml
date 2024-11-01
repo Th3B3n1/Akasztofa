@@ -20,13 +20,15 @@
                 android:layout_width="70sp"
                 android:layout_height="70sp"
                 android:id="@+id/charBeforeButton"
-                android:text="@string/charBeforeButton"
-                android:textSize="20sp"/>
+                android:text="-"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/charToTip"
-                android:text="@string/starterText"
+                android:text="@string/firstChar"
+                android:maxLength="1"
                 android:textAlignment="center"
                 android:textSize="70sp"
                 android:layout_margin="20sp"/>
@@ -34,8 +36,9 @@
                 android:layout_width="70sp"
                 android:layout_height="70sp"
                 android:id="@+id/charAfterButton"
-                android:text="@string/charAfterButton"
-                android:textSize="20sp"/>
+                android:text="+"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
         <com.google.android.material.button.MaterialButton
             android:layout_width="150sp"
@@ -48,15 +51,14 @@
             android:layout_width="wrap_content"
             android:layout_height="477dp"
             android:id="@+id/hangImage"
-            android:contentDescription="@string/hangImage_description"
-            android:src="@drawable/akasztofa09" />
+            android:contentDescription="@string/hangImageDescription"
+            android:src="@drawable/akasztofa00" />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal"
             android:id="@+id/words">
-
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

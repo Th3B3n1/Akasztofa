@@ -1,9 +1,17 @@
 <resources>
-    <string name="app_name">Akasztofa</string>
-    <string name="starterText">A</string>
-    <string name="starterCharacter">_</string>
+    <string name="appName">Akasztófa</string>
+    <string name="firstChar">A</string>
+    <string name="starterChar">_</string>
     <string name="tipButtonText">Tippel</string>
-    <string name="charBeforeButton"><![CDATA[<]]></string>
-    <string name="charAfterButton"><![CDATA[>]]></string>
-    <string name="hangImage_description">Image description</string>
+    <string name="hangImageDescription">Image description</string>
+    <string name="howDidYouManagedThat">Ezt hogy csináltad?</string>
+    <string name="youWon">Nyertél</string>
+    <string name="youLost">Vesztettél</string>
+    <string name="wouldYouLikeToPlayAgain">Szeretnél új játékot játszani?</string>
+    <string name="yes">Igen</string>
+    <string name="no">Nem</string>
+    <string name="the">A(z)</string>
+    <string name="alreadyTipped">-t már tippelted</string>
+    <string name="itWasAGoodTip">Jó tipp volt</string>
+    <string name="itWasABadTip">Rossz tipp volt</string>
 </resources>
