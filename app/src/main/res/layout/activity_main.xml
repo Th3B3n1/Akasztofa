@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:id="@+id/charBeforeButton"
+                android:text="@string/charBeforeButton"
+                android:textSize="20sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/charToTip"
+                android:text="@string/starterText"
+                android:textAlignment="center"
+                android:textSize="70sp"
+                android:layout_margin="20sp"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:id="@+id/charAfterButton"
+                android:text="@string/charAfterButton"
+                android:textSize="20sp"/>
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="150sp"
+            android:layout_height="70sp"
+            android:id="@+id/tipButton"
+            android:text="@string/tipButtonText"
+            android:textSize="20sp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="477dp"
+            android:id="@+id/hangImage"
+            android:contentDescription="@string/hangImage_description"
+            android:src="@drawable/akasztofa09" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:id="@+id/words">
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

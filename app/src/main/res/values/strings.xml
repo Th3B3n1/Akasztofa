@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Akasztofa</string>
+    <string name="starterText">A</string>
+    <string name="starterCharacter">_</string>
+    <string name="tipButtonText">Tippel</string>
+    <string name="charBeforeButton"><![CDATA[<]]></string>
+    <string name="charAfterButton"><![CDATA[>]]></string>
+    <string name="hangImage_description">Image description</string>
+</resources>
